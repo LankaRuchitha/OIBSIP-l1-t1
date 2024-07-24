@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Landing Page</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url('http://wallpapercave.com/wp/mRkcuSI.png'); /* Music-themed background image */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(17, 17, 17, 0.8); /* Semi-transparent background */
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav li {
+            display: inline;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #333;
+            border-radius: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 1rem;
+            position: relative;
+            height: 60vh;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 4rem;
+        }
+
+        .hero p {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Round Image */
+        .round-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 2rem auto;
+        }
+
+        .round-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 2rem;
+            text-align: center;
+            background-color: rgba(34, 34, 34, 0.6); /* Semi-transparent background */
+        }
+
+        .content h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .album, .hit {
+            border: none;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 300px;
+            text-align: center;
+            background-color: rgba(34, 34, 34, 0.6); /* Semi-transparent background */
+        }
+
+        .album img, .hit img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .album h3, .hit h3 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .album p, .hit p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Latest Hits */
+        .latest-hits {
+            background-color: rgba(51, 51, 51, 0.6); /* Semi-transparent background */
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .latest-hits .hit {
+            background-color: transparent; /* Removed background color */
+            border: none; /* Removed border */
+        }
+
+        /* Music Genres */
+        .music-genres {
+            background-color: rgba(34, 34, 34, 0.6); /* Semi-transparent background */
+            padding: 2rem;
+            text-align: center; /* Center the text */
+        }
+
+        .music-genres h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .music-genres ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column; /* Stack genres vertically */
+            align-items: center; /* Center genres horizontally */
+            gap: 0.5rem; /* Add space between genres */
+        }
+
+        .music-genres li {
+            font-size: 1.25rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(17, 17, 17, 0.8); /* Semi-transparent background */
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#latest-hits">Latest Hits</a></li>
+                <li><a href="#music-genres">Music Genres</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to Music World</h1>
+            <p>Discover the latest and greatest in music. Explore new albums, artists, and more.</p>
+            <a href="#latest-hits" class="button">Explore Now</a>
+            <!-- Round Image Below the Explore Now Button -->
+            <div class="round-image">
+                <img src="m.jpg" alt="Music Image">
+            </div>
+        </div>
+    </section>
+
+    <section class="content" id="about">
+        <h2>About Us</h2>
+        <p>Music World is your go-to place for discovering new music. From the latest albums to trending hits, we provide a comprehensive guide to the world of music. Our goal is to connect music lovers with the best tunes out there.</p>
+    </section>
+
+    <section class="latest-hits" id="latest-hits">
+        <h2>Latest Hits</h2>
+        <div class="hit">
+            <img src="m1.jpg" alt="Hit 1">
+            <h3>Hit Song Title 1</h3>
+            <p>Artist Name</p>
+        </div>
+        <div class="hit">
+            <img src="m2.jpg" alt="Hit 2">
+            <h3>Hit Song Title 2</h3>
+            <p>Artist Name</p>
+        </div>
+        <div class="hit">
+            <img src="m3.jpg" alt="Hit 3">
+            <h3>Hit Song Title 3</h3>
+            <p>Artist Name</p>
+        </div>
+    </section>
+
+    <section class="music-genres" id="music-genres">
+        <h2>Music Genres</h2>
+        <ul>
+            <li>Pop</li>
+            <li>Rock</li>
+            <li>Jazz</li>
+            <li>Classical</li>
+            <li>Hip-Hop</li>
+            <li>Electronic</li>
+            <li>Country</li>
+            <li>Reggae</li>
+            <li>Blues</li>
+            <li>Metal</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Music World. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
